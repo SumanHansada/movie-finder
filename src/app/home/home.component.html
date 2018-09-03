@@ -1,0 +1,67 @@
+<mat-toolbar>
+<span>Movies Finder</span>
+</mat-toolbar>
+
+<br />
+<div class="container">
+   <div class="row">
+     <div class="col-md-3">
+      <mat-card>Category</mat-card>
+     </div>
+     <div class="col-md-9">
+        <div class="row">
+          <mat-card>Search Movie</mat-card>
+          <!-- <div class="jumbotron">
+            <p>Search a Movie</p>
+          </div> -->
+        </div>
+        <br/>
+        <div class="row">
+            <mat-table [dataSource]="dataSourceMovies">
+                <ng-container matColumnDef="movie_title">
+                  <mat-header-cell *matHeaderCellDef><span style="font-size: 14pt;">Title</span></mat-header-cell>
+                  <mat-cell  *matCellDef="let movie">
+                    <span>{{movie.movie_title}}</span>
+                  </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="title_year">
+                  <mat-header-cell *matHeaderCellDef><span style="font-size: 14pt;">Year</span></mat-header-cell>
+                  <mat-cell  *matCellDef="let movie">
+                    <span *ngIf="!movie.title_year">N/A</span>
+                    <span>{{movie.title_year}}</span>
+                  </mat-cell>
+                </ng-container>
+
+              <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+            </mat-table>
+            <mat-paginator  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+         </div>
+     </div>
+
+   </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-md-12">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-md-4">Movie Name</th>
+          <th class="col-md-1">Year</th>
+          <th class="col-md-1">Language</th>
+          <th class="col-md-2">Genre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{movie.movie_title}}</td>
+          <td>{{movie.title_year}}</td>
+          <td>{{movie.language}}</td>
+          <td>{{movie.language}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div> -->
