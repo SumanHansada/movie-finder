@@ -7,7 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { MainService } from './core/main.service';
 import { HttpModule } from '@angular/http';
 import { DataViewModule } from 'primeng/dataview';
-import { MatTableModule, MatToolbarModule, MatPaginatorModule, MatCardModule } from '@angular/material';
+import { MatTableModule, MatToolbarModule, MatPaginatorModule, MatCardModule, MatIconModule,
+  MatSidenavModule, MatDividerModule, MatListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -22,7 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTableModule,
     MatToolbarModule,
     MatPaginatorModule,
+    MatIconModule,
     MatCardModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatListModule,
     BrowserAnimationsModule
   ],
   providers: [MainService],
